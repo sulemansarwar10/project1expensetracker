@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react'
 import './Child.css'
 import { TransactionContext } from './transContext'
 function Child() {
-    const  transactions = useContext(TransactionContext);
+   // const  transactions = useContext(TransactionContext);
+    const { transactions, addTransaction } = useContext(TransactionContext);
   // let [transactions,setTransaction] = useState(TransactionContext);
     let [newDisc, setDisc] = useState("");
     let [newAmount, setAmount] = useState();
@@ -11,7 +12,7 @@ function Child() {
     const handleaddition = (event) => {
         event.preventDefault();
         console.log(newDisc, newAmount)
-       // addTransaction({ Amount: Number(newAmount), Disc: newDisc })
+        addTransaction({ Amount: Number(newAmount), Disc: newDisc })
 
         setDisc('');
         setAmount(0);
