@@ -1,6 +1,4 @@
 
-
-
 const TransactionReducer = (state, action) => {
     switch (action.type) {
 
