@@ -29,7 +29,7 @@ jobs:
         
         
       - name: GitHub Action for Yarn
-        uses: sergioramos/yarn-actions@v6  #Borales/actions-yarn@v2.3.0
+        uses: CultureHQ/actions-yarn@v1.0.1        #sergioramos/yarn-actions@v6  #Borales/actions-yarn@v2.3.0
         with:
           # Yarn command
           cmd: install  #npm install/yarn install
