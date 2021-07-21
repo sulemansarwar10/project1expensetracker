@@ -26,11 +26,20 @@ export const ContextProvider = ({ children }) => {
         })
     }
 
+    function deleteTransaction(key) {
+        dispatch({
+            type: "Delete",
+            payload: key
+            
+        })
+    }
+
     return (
         <TransactionContext.Provider value={
             {
                 transactions: state,
-               addTransaction
+               addTransaction,
+               deleteTransaction
             }}>
             {children}
         </TransactionContext.Provider>
