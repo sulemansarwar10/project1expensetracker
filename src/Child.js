@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import './Child.css'
 import { TransactionContext } from './transContext'
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import Button from '@material-ui/core/Button'
-import { isUserWhitespacable } from '@babel/types';
+//import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+//import Button from '@material-ui/core/Button'
+//import { isUserWhitespacable } from '@babel/types';
 function Child() {
     // const  transactions = useContext(TransactionContext);
-    const { transactions, addTransaction, deleteTransaction } = useContext(TransactionContext);
+    const { transactions, addTransaction, } = useContext(TransactionContext);
     // let [transactions,setTransaction] = useState(TransactionContext);
     let [newDisc, setDisc] = useState("");
     let [newAmount, setAmount] = useState();
