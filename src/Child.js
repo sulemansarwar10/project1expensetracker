@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import './Child.css'
 import { TransactionContext } from './transContext'
-//import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-//import Button from '@material-ui/core/Button'
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import Button from '@material-ui/core/Button'
 //import { isUserWhitespacable } from '@babel/types';
 function Child() {
     // const  transactions = useContext(TransactionContext);
-    const { transactions, addTransaction, } = useContext(TransactionContext);
+    const { transactions, addTransaction, deleteTransaction } = useContext(TransactionContext);
     // let [transactions,setTransaction] = useState(TransactionContext);
     let [newDisc, setDisc] = useState("");
     let [newAmount, setAmount] = useState();
@@ -41,7 +41,7 @@ function Child() {
 
     }
     const deletetrans = (key) => {
-        // deleteTransaction(key);
+        deleteTransaction(key);
         console.log(key)
         console.log('hello')
     }
@@ -63,12 +63,12 @@ function Child() {
                 {transactions.map((transobj, ind) => {
                     return (
                         <li key={ind} className={transobj.Amount > 0 ? 'positive' : 'negative'}>
-                            {/* <Button color='secondary' onClick={() => deletetrans(ind)}>
+                            <Button color='secondary' onClick={() => deletetrans(ind)}>
                                 <DeleteForeverIcon />
 
-                            </Button> */}
+                            </Button>
 
-                            {/* <input type='Submit' value='x' /> */}
+                            {/* <input type='Submit' value='x' />  */}
                             <span> {transobj.Disc} </span>
                             <span> ${transobj.Amount} </span>
 
@@ -82,17 +82,17 @@ function Child() {
             <hr />
             <form className='Transactionprocess' onSubmit={handleaddition}>
 
-                <label>
+               <label>
                     Discription <br />
                     <input type='text' value={newDisc} placeholder="Discription" onChange={(ev) => setDisc(ev.target.value)} required />
                 </label>
                 <br />
                 <label>
                     Amount <br />
-                    <input type='number' value={newAmount} placeholder="Amount" onChange={(ev) => setAmount(ev.target.value)} required />
+                    <input type='number' value={newAmount} placeholder="Amount"  onChange={(ev) => setAmount(ev.target.value)} required />
                 </label>
                 <br />
-                <input type='Submit' value='Add Transaction' className='submitbut'/>
+                <input type='Submit' value='Add Transaction' className='submitbut' />
             </form>
 
         </div>
